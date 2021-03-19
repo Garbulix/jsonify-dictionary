@@ -1,5 +1,5 @@
 # jsonify-dictionary
-![banner](https://user-images.githubusercontent.com/22769121/111780843-3cc78200-88b8-11eb-940f-e03bb024551e.png)
+![banner](/banner.png)
 
 Script made for converting my dictionary word lists from [passphrase generator](https://github.com/Garbulix/word-password-generator) into JSON that has small number of internal objects but with a lot of content.
 
