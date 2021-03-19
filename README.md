@@ -8,7 +8,7 @@ Data that are intended to JSONify need to be between curly braces (everything th
 String that starts with the **#** is assumed as internat object variable name. Every line that is below that *hashed one* is assumed as separate element of an array (or just as the string if there is only one line below).
 No need to put strings in quotation marks. 
   
-Example of use is in "example directory"
+Example of use is in "example" directory.
 
 ## early stage limitations
 - there is no number validation -> only strings are created  
