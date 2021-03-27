@@ -3,19 +3,20 @@ import json
 from unidecode import unidecode
 
 ### PUT SOURCE FILE PATH HERE
-SOURCE_PATH = "./2"
+SOURCE_PATH = ""
 ###
 
 class TextFile():
     """class with words loaded from specified, prepared file. 
     Works similarly to list. Aimed to be read-only"""
 
-    def __init__(self, path = ""):
+    def __init__(self, path = "", normalizeChars = False):
         """import words from wordfile in path.
-        Object can be made without path - then it will be empty"""
+        Object made without path given will be empty"""
 
         self._file_lines = []
         self._converted_dict = {}
+        self.normalize = normalizeChars
         
         if len(path):
             self._import_file(path)
@@ -54,7 +55,8 @@ class TextFile():
                     current_key = line[1:].strip() # save the key without "#" char
                     continue # got the key, start doing the values
                 else:
-                    pushed_value = unidecode(line.strip())
+                    pushed_value = unidecode(line.strip()) if self.normalize else line.strip()
+                    
                     if value_index == 0:
                         # it's the first value for that key
                         self._converted_dict[current_key] = pushed_value
